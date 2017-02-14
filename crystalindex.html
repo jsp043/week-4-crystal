@@ -8,11 +8,17 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
     <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+    <script type="text/javascript" src="assets/crystals.js"></script> 
+
 
 </head>
 <body>
-<div class="playgame">
+
+<div class="container text-center" id="instructions">
 <h2>Crystals Collector!</h2>
 
 <p> You will be given a random number at the start of the game.</p>
@@ -22,76 +28,23 @@
 <p>The value of each crystal is hidden from you until you click on it.</p>
 
 <p>Each time when the game starts, the game will change the values of each crystal. </p>
+</div>
 
-<h4>Given Number: <span class="computerNumber"></span></h4>
-<h4>Current Total: <span class="currentTotal"></span></h4>
+<div class="container text-center" id="scoreboard">
+<h4>Given Number: <span id="computerNumber"></span></h4>
+<h4>Current Total: <span id="currentTotal"></span></h4>
 
+<h6>Wins: <span id="winsCounter"></span></h6>
+<h6>Losses: <span id="lossesCounter"></span></h6>
 </div>
 
 
-<div class="container">
-	<img src="assets/images/blue.png" class="jblue" id="one">
-		<img src="assets/images/green.png" class="jgreen" id="two">
-		<img src="assets/images/red.png" class="jred" id= "three">
-		<img src="assets/images/yellow.png" class="jyellow" id= "four">
+
+<div class="container text-center" id="images">
+		<img src="assets/blue.png" class="jblue" id="blue">
+		<img src="assets/green.png" class="jgreen" id="green">
+		<img src="assets/red.png" class="jred" id= "red">
+		<img src="assets/yellow.png" class="jyellow" id= "yellow">
 </div>
-
-<script type="text/javascript">
-// Set variables 
-var wins = 0;
-var losses = 0; 
-var guessesTotal = 0;
-
-var blue = Math.floor((Math.random() * 12) + 1);
-var green = Math.floor((Math.random() * 12) + 1);
-var red = Math.floor((Math.random() * 12) + 1);
-var yellow = Math.floor((Math.random() * 12) + 1);
-
-//Show Number
-$(".computerNumber").html(); 
-
-//Resets the game 
-function resetGame() {
-	var resetComputerNumber = Math.floor(Math.random()*101+19);
-	console.log(resetComputerNumber);
-
-}
-
-//Random Number at the start of the game 
-
-function randomNumber() { 
-		var computerNumber = Math.floor(Math.random()*101+19)
-		return computerNumber;
-}
-
-randomNumber();
-
-$(document).ready(randomNumber());
-
-//Event functions for each crystal
-
-$("#jblue").click(function(){
-	addingJewels(blue);
-});
-
-$("#jgreen").click(function(){
-	addingJewels(green);
-});
-
-$("#jred").click(function(){
-	addingJewels(red);
-});
-
-$("#jyellow").click(function(){
-	addingJewels(yellow);
-});
-
-
-//Adding jewel values
-function addingJewels() {
-	guessesTotal += color; 
-	$(".currentTotal").empty();
-	$('currentTotal').append(guessesTotal);
-};
-
-</script>
+</body>
+</html>

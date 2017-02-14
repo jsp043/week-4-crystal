@@ -1,14 +1,19 @@
 $(document).ready(function() {
 
+  //generate random number 
 	var RandomNumber = Math.floor((Math.random()*101)+19);
 	console.log(RandomNumber);
+  
+  //Display the random number on screen
 	$('#computerNumber').text(RandomNumber);
 
+  //Display wins 
 	var wins = 0;
 	$('#winsCounter').text(wins);
+  //Display losses 
 	var losses = 0; 
 	$('#lossesCounter').text(losses);
-
+  //display adding total 
 	var userTotal = 0;
 	$('#currentTotal').text(userTotal);
 	var guessesTotal = 0;
@@ -100,17 +105,4 @@ $(document).ready(function() {
         }
 });
 });
-
-
-// //Changing Scoreboard of jewel values
-// function addingJewels(color) {
-// 	guessesTotal += color; 
-// 	$(".currentTotal").empty();
-// 	$(".currentTotal").append(guessesTotal);
-// 	if (guessesTotal > number) {
-// 		losses++;
-// 		$('#lossesCounter').html(losses);
-// 	}
-// };
-
 
