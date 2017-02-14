@@ -10,9 +10,15 @@
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+	<link rel="stylesheet" type="text/css" href="week-4-crystal/style.css">
+	
+    <script type="text/javascript" src="week-4-crystal/assets/crystals.js"></script> 
+
+
 </head>
 <body>
-<div class="playgame">
+
+<div class="container text-center" id="instructions">
 <h2>Crystals Collector!</h2>
 
 <p> You will be given a random number at the start of the game.</p>
@@ -22,19 +28,23 @@
 <p>The value of each crystal is hidden from you until you click on it.</p>
 
 <p>Each time when the game starts, the game will change the values of each crystal. </p>
+</div>
 
-<h4>Given Number: <span class="computerNumber"></span></h4>
-<h4>Current Total: <span class="currentTotal"></span></h4>
+<div class="container text-center" id="scoreboard">
+<h4>Given Number: <span id="computerNumber"></span></h4>
+<h4>Current Total: <span id="currentTotal"></span></h4>
 
+<h6>Wins: <span id="winsCounter"></span></h6>
+<h6>Losses: <span id="lossesCounter"></span></h6>
 </div>
 
 
-<div class="container">
-	<img src="assets/images/blue.png" class="jblue" id="one">
-		<img src="assets/images/green.png" class="jgreen" id="two">
-		<img src="assets/images/red.png" class="jred" id= "three">
-		<img src="assets/images/yellow.png" class="jyellow" id= "four">
-</div>
 
+<div class="container text-center" id="images">
+		<img src="week-4-crystal/assets/blue.png" class="jblue" id="blue">
+		<img src="week-4-crystal/assets/green.png" class="jgreen" id="green">
+		<img src="week-4-crystal/assets/red.png" class="jred" id= "red">
+		<img src="week-4-crystal/assets/yellow.png" class="jyellow" id= "yellow">
+</div>
 </body>
 </html>
